@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.container2, .inp {
+    color: #DDD;
+    background: #222;
+    padding: 4px 6px;
+    border: 1px #222 solid;
+    font-family: Consolas, sans-serif;
+    font-size: 13px;
+}
+.container2 p {
+    margin: 0;
+    padding: 3px 6px;
+}
+.container2 p:nth-child(odd) {
+    background: #333;
+}
+.container2 {
+    max-height: 800px;
+    overflow: hidden;
+    padding: 0;
+}
+.inp {
+    width: 100%;
+    box-sizing: border-box;
+}
