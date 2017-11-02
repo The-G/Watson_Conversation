@@ -78,7 +78,7 @@
 		$('.inp').keyup(function(e) {
 		    if (e.keyCode == 13) {
 		    	
-		        $cont.append('<p>' + $(this).val() + '</p>');
+		        $cont.append('<h4>' + $(this).val() + '</h4>');
 		        $cont[0].scrollTop = $cont[0].scrollHeight;
 		        $(this).val('');
 	
@@ -109,7 +109,7 @@
 			var $cont = $('.container2');
 
 			// set isay to collocate
-			var isay = '<p>' + _isay + '</p>';
+			var isay = '<h4>' + _isay + '</h4>';
 			$cont.append(isay);
 			
 			// scroll down
@@ -130,18 +130,18 @@
 			$.ajax({
 				type : 'POST',
 				url  : 'watsonsay',
-				data : 'isay=' + _isay,
+				data : 'isay=' + encodeURIComponent(_isay),
 				async: false,
 				success : function(data) {
 					console.log(data);
 					var watsonsay =
-						'<p>' + data.output.text;
+						'<h4>' + data.output.text;
 						
 					if (_isay ==='') {
 						watsonsay += '';
 					}	
 					
-					watsonsay += '</p>';
+					watsonsay += '</h4>';
 					$cont.append(watsonsay);	
 					$cont[0].scrollTop = $cont[0].scrollHeight;
 				}
@@ -164,15 +164,14 @@
 	
 	<div>
 		<div class="container2">
-		    <p class="row">왓슨 놋봇이당!!</p>
+		    <p>왓슨 놋봇이당!!</p>
 		</div>
 		<input type="text" class="inp">
 	</div>
 	
 </div>
-
 	<!-- Origin -->
-	<script>
+	<!-- <script>
 		var $cont = $('.container2');
 		$cont[0].scrollTop = $cont[0].scrollHeight;
 		
@@ -187,6 +186,6 @@
 		    }
 		})
 		.focus();
-	</script>
+	</script> -->
 </body>
 </html>
